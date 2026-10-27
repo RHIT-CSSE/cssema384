@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>CSSE 386</title>
+<title>CSSE/MA 384 Syllabus</title>
 
 
 <link rel="stylesheet" type="text/css" href="./syllabus_files/screen.css">
@@ -9,12 +9,12 @@
 </head>
 <body>
 <div id="header">
-        <a id="index_link" href="./index.html">CSSE 386</a>
+        <a id="index_link" href="./index.html">CSSE/MA 384</a>
         <a id="syllabus_link" href="./syllabus.html">Syllabus</a>
         <a id="schedule_link" href="./schedule.html">Schedule</a>
         <a id="quiz_link" href="./worksheets.html">Quizzes</a>
         <a id="quiz_link" href="./labs.html">Labs</a>
-        <a id="quiz_link" href="./ncaa.html">NCAA Competition</a>
+        <a id="project_link" href="./final-project.html">Final Project</a>
         <a id="resources_link" href="./resources.html">Resources</a>
         <div style="clear:both;"></div>
     </div>
@@ -22,32 +22,26 @@
 <div id="content">
 
 <header>
-    <h1>CSSE-386 Data Mining with Programming</h1>
-    <h2>Winter 2024-2025</h2>
-    <h3>Section 01-02</h3>
+    <h1>CSSE/MA 384 Data Mining</h1>
+    <h2>Winter 2026-2027</h2>
 </header>
-<table>
-<tr><td>Section 1</td>
-<td>M<br/>T<br/>R<br/>F<br /></td>
-
-<td>10:00-10:50a<br/>10:00-10:50a<br/>10:00-10:50a<br/>10:00-10:50a</td>
-<td>O201<br/>O201<br/>O201<br/>online</td>
-</tr>
-</table>
-<br>
-<table>
-<tr>
-<td>Section 2</td>
-<td>M<br/>T<br/>R<br/>F<br /></td>
-<td>11:00-11:50a<br/>11:00-11:50a<br/>11:00-11:50a<br/>11:00-11:50a</td>
-<td>O201<br/>O201<br/>O201<br/>online</td>
-</tr>
+<table class="schedule" aria-label="Course sections">
+    <thead><tr><th scope="col">Section</th><th scope="col">Days</th><th scope="col">Time</th><th scope="col">Location</th><th scope="col">Instructor</th></tr></thead>
+    <tbody>
+        <tr><th scope="row">Section 01</th><td>M, T, R, F</td><td>10:00-10:50 a.m.</td><td>G217</td><td>Dr. Matt Boutell</td></tr>
+        <tr><th scope="row">Section 02</th><td>M, T, R, F</td><td>11:00-11:50 a.m.</td><td>G217</td><td>Dr. Olga Scrivner</td></tr>
+        <tr><th scope="row">Section 03</th><td>M, T, R, F</td><td>1:00-1:50 p.m.</td><td>G217</td><td>Dr. Olga Scrivner</td></tr>
+        <tr><th scope="row">Section 04</th><td>M, T, R, F</td><td>2:00-2:50 p.m.</td><td>G217</td><td>Dr. Olga Scrivner</td></tr>
+    </tbody>
 </table>
 
 <section>
     <p><a name="instructors"></a></p>
     <h2>Instructor Contact Information</h2>
-    <td><a href="https://www.linkedin.com/in/olgascrivner/">Dr.Olga Scrivner</a></td>
+    <h3><a href="https://www.rose-hulman.edu/academics/faculty/boutell-matthew-boutell.html">Dr. Matt Boutell</a></h3>
+    <p><strong>Office:</strong> Moench F226</p>
+    <p><strong>Email:</strong> <a href="mailto:boutell@rose-hulman.edu">boutell@rose-hulman.edu</a></p>
+    <h3><a href="https://www.linkedin.com/in/olgascrivner/">Dr. Olga Scrivner</a></h3>
     <p><strong>Office:</strong> F204</p>
     <p><strong>Email:</strong> scrivner@rose-hulman.edu</p>
 </section>
@@ -55,6 +49,56 @@
 <section>
     <h2>Course Description and Structure</h2>
     <p>An introduction to data mining for large data sets, including data preparation, exploration, aggregation/reduction, and visualization. Elementary methods for classification, association, and cluster analysis are covered. Significant attention will be given to presenting and reporting data mining results. Students may not get credit for both this course and the MA 384 Data Mining courses.</p>
+</section>
+
+<section aria-labelledby="course-overview">
+<h2 id="course-overview">Syllabus Course Overview · Winter 2026-2027</h2>
+<table class="schedule" aria-label="Tentative weekly course topics and proposed labs">
+    <thead><tr><th scope="col">Week</th><th scope="col">Dates (2026-2027)</th><th scope="col">Topics</th><th scope="col">Proposed hands-on/lab sessions</th></tr></thead>
+    <tbody>
+        <tr><td>Week 1</td><td>Nov 30-Dec 4, 2026</td><td>Introduction to Data Science + Data Acquisition + Data Cleaning</td>
+            <td>Lab 1: Data Acquisition<br>Lab 2: Guided Data Cleaning</td></tr>
+        <tr><td>Week 2</td><td>Dec 7-11, 2026</td><td>Data Quality + Exploratory Data Analysis</td>
+            <td>Lab 1: Data Quality - missing/inconsistent data and quality issues<br>
+                Lab 2: Exploratory Data Analysis - distributions, summary statistics, and relationships</td></tr>
+        <tr><td>Week 3</td><td>Dec 14-18, 2026</td><td>Data Visualization + Review + Exam 1</td>
+            <td>Lab 1: Data Visualization and critique of visualizations<br>
+                Lab 2: Integrated review - acquisition → cleaning → data quality → EDA → visualization</td></tr>
+        <tr><td colspan="4" class="break">Holiday Vacation: after the last class on
+            December 18, 2026, through January 3, 2027. Classes resume January 4.</td></tr>
+        <tr><td>Week 4</td><td>Jan 4-8, 2027</td><td>Distance, Similarity &amp; Clustering<br>
+            Distance metrics; distance matrices; k-means clustering; centroids</td>
+            <td>Lab 1: Distance metric and distance matrix calculations<br>
+                Lab 2: k-means clustering, centroid updates, and Python verification</td></tr>
+        <tr><td>Week 5</td><td>Jan 11-15, 2027</td><td>Hierarchical Clustering + Decision Trees for Classification and Regression<br>
+            Entropy and information gain</td>
+            <td>Lab 1: Hierarchical clustering and dendrogram interpretation<br>
+                Lab 2: Decision trees, entropy, and information gain</td></tr>
+        <tr><td>Week 6</td><td>Jan 19-22, 2027<br>Jan 18: Martin Luther King, Jr. Day - no classes</td>
+            <td>Metrics, Baselines + Project Team Formation / Sprint 0<br>
+                Confusion matrix; accuracy, precision, recall, and F1</td>
+            <td>Lab 1: Confusion matrix and classification metrics<br>
+                Lab 2: Baseline/model comparison activity or project team formation/Sprint 0</td></tr>
+        <tr><td>Week 7</td><td>Jan 25-29, 2027</td><td>Linear and Logistic Regression: prep, 1HE, matrix form<br>
+            Linear regression; matrix representation; MSE and R²; logistic regression;
+            sigmoid/probabilities; one-hot encoding (1HE)</td>
+            <td>Lab 1: Linear regression calculations, MSE/R², and matrix representation<br>
+                Lab 2: Logistic regression, sigmoid, and classification probabilities</td></tr>
+        <tr><td>Week 8</td><td>Feb 1-5, 2027</td><td>Softmax, CCE + Predictive Models<br>
+            Softmax; one-hot encoding as needed; categorical cross-entropy (CCE); model comparison</td>
+            <td>Lab 1: Softmax and cross-entropy calculations<br>
+                Lab 2: Predictive modeling / model comparison</td></tr>
+        <tr><td>Week 9</td><td>Feb 8-12, 2027</td><td>Review + Exam 2 + Project Sprint</td>
+            <td>Lab 1: Integrated predictive-modeling review<br>Lab 2: Project Sprint</td></tr>
+        <tr><td>Week 10</td><td>Feb 15-19, 2027</td><td>Project Presentations</td>
+            <td>Project work and presentations during lab/meeting time as appropriate</td></tr>
+        <tr><td>Finals</td><td>Feb 22-25, 2027</td><td colspan="2">Final examination period: Monday,
+            February 22, 8:00 a.m., through Thursday, February 25, 5:00 p.m.</td></tr>
+        <tr><td>Term ends</td><td>Mar 1, 2027</td><td colspan="2">Final grades due at 9:00 a.m.;
+            Winter Term ends at 5:00 p.m.</td></tr>
+    </tbody>
+</table>
+
 </section>
 
 <section>
@@ -70,7 +114,7 @@
 <section>
     <p><a name="textbooks"></a></p>
     <h2>Required Materials</h2>
-    <p><strong>Textbook:</strong> CSSE 386: Data Mining with Programming ZyBook</p>
+    <p><strong>Textbook:</strong> Steven S. Skiena, <em>The Data Science Design Manual</em> (DSD)</p>
 </section>
 
 <section>
@@ -102,30 +146,16 @@
 
 <section>
     <h2>Exams</h2>
-    <ul>
-        <li>Exam 1 Paper: Tuesday, January 21 in Class</li>
-        <li>Exam 2 Paper: Monday, February 17 in Class</li>
-    </ul>
-    <p>There will be no make-up exams. For exam accommodation, please provide documentation and request scheduling at least 1 week ahead.</p>
 </section>
 
 <section>
-    <h2>Coding Project: Kaggle Competition</h2>
-    <ul>
-        <li>You will work in teams up to 3 peoples</li>
-        <li>Submssion deadline - Wednesday Feb 26 via Kaggle</li>
-        <li>Grading is based on the scores and model performance</li>
-        <li>The winner team will be invited to compete at <a href="https://crossroadsclassicanalyticschallenge.com/">NCAA</a></li>
-        <li>The winner team will get a bonus 5% for competing at NCAA. Last year we won a 3rd place + $2,500 award for the team</li>
-    </ul>
-    <p>There will be no make-up exams. For exam accommodation, please provide documentation and request scheduling at least 1 week ahead.</p>
+    <h2>Final Project</h2>
 </section>
 
 <section>
     <p><a name="attendance"></a></p>
     <h2>Attendance</h2>
-    <p>Attendance is required M,T,R. For athletic or campus-wide events, please provide documentation. For excused absences, please provide documentation - you also will be allowed to make-up worksheets for missing days.</p>
-<p>Note for unexcused absences: if you missed more than 6 days (2 weeks) - you will not be allowed to take exams.</p>
+    <p>Attendance is required.</p>
 </section>
 
 
@@ -205,7 +235,7 @@ Likewise, use of Large Language Models (LLMs) such as ChatGPT to obtain answers 
 
 <h4>Academic Integrity and CSSE Integrity Committee Procedures </h4>
 
-<p>It is critical to maintain academic integrity. It is essential for all students to cite any and all sources of help received in completing coursework. This practice not only fosters a culture of honesty and transparency but also prevents misunderstandings that might otherwise escalate to formal proceedings. Students should also be aware of what is appropriate help on homework assignments – see <a href="https://rosehulman.sharepoint.com/:w:/r/sites/CS/_layouts/15/Doc.aspx?sourcedoc=%7B72D3DC4B-233D-4DF6-8E10-736359A06C80%7D&amp;file=IntegrityPilotPolicy%20-%20What%20Constitutes%20Misconduct.docx">What Constitutes Misconduct</a>. To ensure fairness and responsibility, any instances of suspected misconduct will be handled through the CSSE Integrity Committee.  </p>
+<p>It is critical to maintain academic integrity. It is essential for all students to cite any and all sources of help received in completing coursework. This practice not only fosters a culture of honesty and transparency but also prevents misunderstandings that might otherwise escalate to formal proceedings. Students should also be aware of what is appropriate help on homework assignments - see <a href="https://rosehulman.sharepoint.com/:w:/r/sites/CS/_layouts/15/Doc.aspx?sourcedoc=%7B72D3DC4B-233D-4DF6-8E10-736359A06C80%7D&amp;file=IntegrityPilotPolicy%20-%20What%20Constitutes%20Misconduct.docx">What Constitutes Misconduct</a>. To ensure fairness and responsibility, any instances of suspected misconduct will be handled through the CSSE Integrity Committee.  </p>
 
 <p>If a case of suspected misconduct arises, it will be submitted to the CSSE Integrity Committee for review (see
 <a href="https://rosehulman.sharepoint.com/:w:/r/sites/CS/Shared%20Documents/Pilot%20Integrity%20Policy/IntegrityPilotPolicy%20-%20Procedures.docx?d=wf4c70babf3ac434ba29d5518dca9f877&amp;csf=1&amp;web=1&amp;e=1efwlT">Policies and Procedures</a> and possible penalties (see <a href="https://rosehulman.sharepoint.com/:w:/r/sites/CS/Shared%20Documents/Pilot%20Integrity%20Policy/IntegrityPilotPolicy%20-%20Penalties%20%26%20Evidence.docx?d=w916e293ca31a4493bdbdd6b78ed2d3dd&amp;csf=1&amp;web=1&amp;e=wCWF2K">IntegrityPilotPolicy</a>). The process includes an initial review of the evidence by the committee, a time for students to explain or admit to potential misconduct, and potentially a hearing to examine the circumstances and evidence. Students are encouraged to continue their studies and engage with the course material and instructor normally throughout the investigation. </p>
