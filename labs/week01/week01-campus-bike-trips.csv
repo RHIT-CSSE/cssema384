@@ -1,0 +1,22 @@
+trip_id,station,rider_type,duration_min,distance_km
+1001,library,student,12,2.4
+1002,science,staff,18,3.6
+1003, Library ,Student,10,2.0
+1004,residence,student,25,5.0
+1005,science,STAFF,,3.0
+1006,library,student,15,
+1007,residence,student,-8,1.6
+1008,science,staff,20,-4.0
+1009,library, student ,16,3.2
+1010,residence,student,30,6.0
+1011,science,staff,22,4.4
+1012,library,,14,2.8
+1013,residence,student,24,4.8
+1014,science,staff,8,1.6
+1015,library,student,40,8.0
+1016,residence,student,28,5.6
+1017,science,staff,6,1.2
+1018,library,student,12,2.4
+1019,residence,student,18,3.6
+1020,science,staff,10,2.0
+1004,residence,student,25,5.0
