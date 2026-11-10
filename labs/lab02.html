@@ -1,163 +1,70 @@
 <!DOCTYPE html>
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>CSSE 386</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-<link rel="stylesheet" type="text/css" href="../syllabus_files/schedule.css">
-<link rel="stylesheet" type="text/css" href="../syllabus_files/screen.css">
-</head>
-<body>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lab 02: Data Acquisition and Cleaning | CSSE 384</title>
+<link rel="icon" href="../favicon.ico">
+<link rel="stylesheet" href="../syllabus_files/schedule.css">
+<link rel="stylesheet" href="../syllabus_files/screen.css">
+</head><body>
 <div id="header">
-        <a id="index_link" href="../index.html">CSSE 386</a>
-        <a id="syllabus_link" href="../syllabus.html">Syllabus</a>
-        <a id="schedule_link" href="../schedule.html">Schedule</a>
-        <a id="quiz_link" href="../worksheets.html">Worksheets/Quizzes</a>
-        <a id="quiz_link" href="../labs.html">Labs</a>
-        <a id="resources_link" href="../resources.html">Resources</a>
-        <div style="clear:both;"></div>
-    </div>
-
-<div id="content">
-
-    <h1>Lab Assignment 02: Exploring Palmer Penguins Dataset</h1>
-    <p><strong>Objective:</strong> In this lab, you will explore the Palmer Penguins dataset to:</p>
-    <ul>
-        <li>identify missing data</li>
-        <li>visualize data</li>
-        <li>impute values</li>
-        <li>uncover interesting insights</li>
-    </ul>
-
-    <h2>Instructions</h2>
-    <div>Provide citation for any portion that of the code that you consulted external sources. Note you cannot use genAI to generate solutions. You are ONLY allowed to debug your code with AI assistance and you must indicate clear where (which part of the code) you used the AI assitance to debug</div>
-    <p>Make sure to answer any questions marked as QUESTION (in bold)</p>
-    <p>Submission: code cells should be executed and show the output and graphs. If you have collaborated with another student, state their name, but the submission and the notebook must be individual (no shared URL allowed). Set the Shared URL Link to Viewable publicly and paste the link to Gradescope assignment Lab02</p>
-    <section>
-        <h3>Step 1. Understanding Penguin dataset (15pts) </h3>
-        <p>The first step of exploratory data analysis is to explore the number of instances, 
-            number of features, and type of each feature</p>
-            <p>Download palmer_penguin.csv data from the course schedule</p> 
-            <p>Create a new colab notebook. Make sure you add your name</p> 
-        <ol>
-       <li> <p>Import pandas and matplotlib libraries </p></li>
-       <li> <p>Import data and name it <strong>dataset</strong></p></li>
-    <li><p> Display the first 5 columns</p></li>
-    <li><p> Identify the shape of the dataset</p></li>
-    <li><p> Identify the information about features types</p></li>
-    
-    </ol>
-<div><strong>Questions</strong>
-<ul>
-<li>How many instances are in the penguins dataset?</li>
-<li>How many features are in the penguins dataset?</li>
-<li>Which columns contain the categorical features in the dataset?</li>
-</ul>
-</div>
-        </section>
-<section>
-    <h3>Step 2 Exploring Relationships (20 Points)</h3>
-    <p>Once the dataset's size and features are understood, we can explore the relationships between features.
-Data visualizations like scatter plots give a visual representation of how pairs of features change together.
-Instead of creating individual scatteplots, you will learn how to use pair plot with seaborn library.</p>
-<ol>
-    <li><p>Import seaborn library</p></li>
-<pre><code>import seaborn as sns</code></pre>
-
-    <li>Seaborn's pairplot() creates a grid of pairwise scatterplots for numerical features in the penguins dataset:</li>
-<pre><code>p = sns.pairplot(dataset)
-plt.show()
-</code></pre>
-<li>Increase the font for all future plots, using update(). Then rerun your pairplot:</li>
-<pre><code>plt.rcParams.update({'font.size': 14})</code></pre>
-<li>Add categorical values to the plot.  
-    The hue parameter adds color based on the values of the <strong>island</strong> column:</li>
-<pre><code>p = sns.pairplot(dataset, hue='island')
-plt.show()
-</code></pre>
-<li>Replace island by species category</li>
-<li>Create a contingency table (=crosstable) for species and island</li>
-<pre><code>pd.crosstab(index=dataset['species'], columns=dataset['island'])</code></pre>
-<li>Create a barplot with species but instead of using barplot we will use a simplified version with seaborn
-<ul>
-    <li>Take a look at <a href="https://seaborn.pydata.org/generated/seaborn.countplot.html" target="_blank">https://seaborn.pydata.org/generated/seaborn.countplot.html</a></li>
-        <li>Create a countplot for species</li>
-        <li>Create a countplot for species but color-coded with island</li>
-    </li>
-    </ul>
-</ol>
-<div><strong>Questions</strong>
-    <ul>
-<li>Which island has only Adelie penguins?</li>
-<li>What is the relationship between bill length and body mass?</li>
-<li>Look at the pairplot histogram of bill lengths (top left), and then examine the same plot with hues for species and island. Describe any interesting observation(s)</li>
-
-</ul>  
-</div>
+<a id="index_link" href="../index.html">CSSE 384</a>
+<a id="syllabus_link" href="../syllabus.html">Syllabus</a>
+<a id="schedule_link" href="../schedule.html">Schedule</a>
+<a id="worksheet_link" href="../worksheets.html">Worksheets</a>
+<a id="lab_link" href="../labs.html">Labs</a>
+<a id="resources_link" href="../resources.html">Resources</a>
+<div style="clear:both;"></div></div>
+<main id="content">
+<h1>Lab 02: Data Acquisition and Cleaning</h1>
+<p><strong>Graded: 20 points. Individual notebook submission.</strong></p>
+<h2>Learning objectives</h2><ul><li>Acquire data and distinguish identifiers, categorical features, and numerical measurements.</li><li>Detect and address data quality problems with justified cleaning choices.</li><li>Apply min-max normalization to appropriate measurements and validate results.</li></ul>
+<h2>Preparation</h2><p>Complete Lab 01. Read DSD 1.1–1.3, 3.1.1–3.1.2, 3.2, 3.3.1–3.3.3, and 4.3. Review data types, acquisition, errors, missing values, and normalization.</p>
+<h2>Graded checkpoints</h2><ol><li><strong>Acquire and inspect (3 points):</strong> load the CSV, identify features and types, and summarize the data.</li><li><strong>Identify quality issues (4 points):</strong> find missing values, duplicates, inconsistent categories, and unexpected values.</li><li><strong>Clean data (5 points):</strong> address quality problems and explain your choices; preserve the raw data.</li><li><strong>Normalize features (4 points):</strong> apply min-max scaling to appropriate numerical measurements and compare results. Do not normalize trip identifiers.</li><li><strong>Validate and reflect (4 points):</strong> verify the cleaned data and discuss results and limitations.</li></ol>
+<h2>Submission</h2><ol><li>Complete all five coding checkpoints and write one short Markdown response per checkpoint.</li><li>Restart the runtime, upload the CSV again if needed, and run all cells in order. Preserve relevant outputs.</li><li>Save and use <strong>File &gt; Download &gt; Download .ipynb</strong>.</li><li>Submit the completed <code>.ipynb</code> through the course LMS. Include <strong>both your code and written responses within the notebook</strong>.</li></ol><p>Consult the LMS for the deadline.</p><h2>Independent Coding Practice: AI Assistance Off</h2>
+<p>In Colab, open <strong>Tools &gt; Settings &gt; AI Assistance</strong>. Where available, turn off <strong>Show AI-powered inline completions</strong> and turn on <strong>Hide generative AI features</strong>, then save. Labels vary by account; ask the instructor to verify settings if needed. Do not use AI chat, Generate, or Help me code.</p>
+<p>Complete exercises without code or answers generated by ChatGPT, Gemini, Copilot, or similar assistants. Standard non-generative editor completion is allowed. Use readings, documentation, provided examples, and instructor help. See the <a href="https://research.google.com/colaboratory/faq.html">Colab FAQ</a>.</p>
+<h2>Open the notebook</h2><p><a href="https://colab.research.google.com/github/RHIT-CSSE/cssema384/blob/main/labs/week01/week01-data-cleaning.ipynb">Open in Colab</a> · <a href="./week01/week01-data-cleaning.ipynb" download>Download notebook</a> · <a href="./week01/week01-campus-bike-trips.csv" download>Download dataset (CSV)</a></p>
+<ol><li>Open in Colab, sign in, and select <strong>File &gt; Save a copy in Drive</strong>.</li><li>Click <strong>Connect</strong> to start a standard Python runtime.</li><li>Download the CSV above, then upload it with the Colab Files panel (folder icon &gt; Upload). Opening a GitHub notebook does not upload its CSV.</li></ol><p>Uploaded files are temporary; upload the CSV again after a runtime reset. Keep the original dataset unchanged.</p>
+<section id="hints" aria-labelledby="hints-title">
+<h2 id="hints-title">Checkpoint hints</h2>
+<p>Consult only what you need. These examples use a separate toy table; write your own bike-trip code.</p>
+<details><summary>1. Inspect a table</summary>
+<pre><code>toy = pd.DataFrame({"item_id": [1, 2, 3], "label": [" A ", "b", None],
+                    "mass_g": [10, -2, None]})
+toy.shape
+toy.dtypes
+toy["mass_g"].describe()</code></pre>
+<p>A column's stored type does not determine its role. Decide whether arithmetic on it has meaning.</p></details>
+<details><summary>2. Find issues</summary>
+<pre><code>toy.isna().sum()
+toy.duplicated().sum()
+toy["label"].value_counts(dropna=False)
+toy.loc[toy["mass_g"] &lt;= 0]</code></pre>
+<p>The duplicate count gives extra copies, not all members of duplicate groups. Use the dataset rules to distinguish invalid values from unusual but valid values.</p></details>
+<details><summary>3. Clean without changing the original</summary>
+<pre><code>revised = toy.copy().drop_duplicates()
+revised["label"] = revised["label"].str.strip().str.lower()
+revised["label"] = revised["label"].fillna("unknown")
+revised["mass_g"] = revised["mass_g"].mask(revised["mass_g"] &lt;= 0)
+# Choose ONE policy: drop missing measurements or fill them.
+# Tools: dropna(subset=[...]) or fillna(a_justified_value)</code></pre>
+<p>Compute any replacement statistic after removing duplicate records and invalid measurements. A median is one possible replacement; explain your choice.</p></details>
+<details><summary>4. Scale a measurement</summary>
+<pre><code>values = pd.Series([5.0, 10.0, 15.0])
+low, high = values.min(), values.max()
+scaled = 0.0 if high == low else (values - low) / (high - low)</code></pre>
+<p>Apply the formula separately to each suitable measurement. A value halfway through the observed range need not be the median.</p></details>
+<details><summary>5. Check your results</summary>
+<pre><code>import math
+assert revised["item_id"].is_unique
+assert not revised.duplicated().any()
+revised.isna().sum()
+revised["label"].isin(["a", "b", "unknown"])
+# For a numerical Series s:
+# s.map(math.isfinite).all()
+# (s &gt; 0).all()
+# s.between(-1e-10, 1 + 1e-10).all()  # scaled values only</code></pre>
+<p>Use <code>.all()</code> to combine row-by-row checks. Check category membership after standardizing strings. Compare <code>min()</code> and <code>max()</code> with the expected scaled endpoints, allowing rounding tolerance. Use <code>pd.testing.assert_frame_equal(raw, pd.read_csv("week01-campus-bike-trips.csv"))</code> to check raw preservation.</p></details>
+<p><a href="https://pandas.pydata.org/docs/getting_started/intro_tutorials/index.html">pandas tutorials</a></p>
 </section>
-
-<section>
-    <h3>Step 3 Describe the shape of data (15 Points)</h3>
-    <p>The shape of a feature's distribution is important way to examine if data is normally distributed, or skewed</p>
-<ol>
-<li>Calculate descriptive statistics using describe()</li>
-<li>Take a look at the documentation <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.describe.html" target="_blank">https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.describe.html</a> and include all data. The default is only for numerical</li>
-<li>Create histograms for numeric data (should be 4). See how to drop the last column year:</li>
-    To drop year column dataset.drop(columns=["year"]).hist()
-<li>Adjust the figure size to fit 4 histograms better. Then rerun your plot</li>  
-<pre><code>plt.rcParams["figure.figsize"] = (12, 10)</code></pre>  
-<li>Change the size of the bins, try different numbers. Check out how to change bins: <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.hist.html" target="_blank">https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.hist.html</a>  </li>
-<li>Add title (Come up with a good title)</li>
-</ol>
-</section>
-<section>
-    <h3>Step 4 Detect missing data (20pts)</h3>
-    <p>If only a few instances have missing data, those instances may be set aside without having a negative impact on a model. 
-        if many instances have missing data, techniques like imputation may be needed</p>
-<ol>
-    <li>Use pd.isna() to identify missing values for bill length</li>
-<pre><code>dataset[pd.isna(dataset['bill_length_mm'])]</code></pre>
-<li>Display missing data counts for all columns (see In-Class Labs)</li>
-<li>Import missingno library - see In-Class Practice</li>
-<li>Use bar() amd matrix() to visualize data</li>
-</ol>
-<div><strong>Questions</strong>
-<ul>
-    <li>Which columns have missing values?</li>
-    <li>How many penguins are missing information about bill length?</li>
-<li>What type of missing data are the numerical measurements for these two penguins? HINT: are there any observable patterns for these penguins (HINT:if yes -> MAR; if no -> MCAR)</li>
-</ul>
-</div>
-    </section>
-    <section>
-        <h3>Step 5 Impute missing data (20 Points)</h3>
-
-    <ol>
-        <li>Impute bill_length_mm column with mean()</li>
-    <pre><code>#Follow this format:
-dataset['column'] = dataset['column'].fillna(dataset['column'].name()) 
-# where name is the imputation method
-    </code></pre>
-        <li>Impute bill_depth_mm column with median()</li>
-    <li>Impute flipper_length_mm column with your own choice of method</li>
-    <li>Impute categorical missing data with the word "Unknown". HINT: it will be just the string value</li>
-    <li>Make sure all missing data is imputed. Run info()</li>
-    <li>Finally, display info() with dropped na dataset</li>
-    </ol>
-    <div><strong>Questions</strong>
-    <ul>
-        <li>Currently, you used a placeholder "Unknown" for categorical data. How this method can be useful? What other methods could you apply to categorical data?</li>
-    <li>What did you learn in this lab? Do you feel prepared now to explore your own data for homework next week?</li>
-    </ul>
-    </div>
-        </section>
-<h3>Grading Rubrics</h3>
-<ol>
-<li>Step 1 Understanding data 15pts (all questions are answered)</li> 
-<li>Step 2 Exploring Relations 20pts (all questions are answered</li>
-<li>Step 3 Shape of Data 15pts </li>
-<li>Step 4 Missing data 20pts (all questions are answered) </li>
-<li>Step 5 Imputation 20pts (all questions are answered)</li>
-<li>Submission, Code, Format, Help citation (10 Points)</li>
-</ol>
-        </body>
-        </html>
+</main></body></html>
