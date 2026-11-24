@@ -1,21 +1,14 @@
 <!DOCTYPE html>
 
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>CSSE/MA 384 Schedule</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="stylesheet" type="text/css" href="./syllabus_files/screen.css">
 <link rel="stylesheet" type="text/css" href="./syllabus_files/schedule.css">
-<style>
-th {
-    position: sticky; /* Makes the header row fixed */
-    top: 0; /* Keeps the header at the top of the scrolling container */
-    background-color: #f4f4f4; /* Add a background color to distinguish the header */
-    z-index: 1; /* Ensures the header stays above table content */
-}
-</style>
+<link rel="stylesheet" href="./schedule-page.css">
 </head>
-<body>
+<body class="schedule-page">
 <div id="header">
     <a id="index_link" href="./index.html">CSSE/MA 384</a>
     <a id="syllabus_link" href="./syllabus.html">Syllabus</a>
@@ -29,115 +22,54 @@ th {
 
 <div id="content">
 
-<section aria-labelledby="weekly-meetings">
-<h2 id="weekly-meetings">Winter 2026-2027 Weekly Schedule - Tentative</h2>
-<p><strong>DSD</strong> = Skiena, <em>The Data Science Design Manual</em>.
-    Read before class. See the <a href="./syllabus.html#course-overview">course overview</a>.</p>
-<h3 id="week-1">Week 1 · Nov 30-Dec 4, 2026</h3>
-<div style="overflow-x: auto;">
-<table class="schedule" aria-labelledby="week-1">
-    <thead><tr><th scope="col">Day / Date</th><th scope="col">Topic</th>
-        <th scope="col">Slides</th><th scope="col">Required Reading</th>
-        <th scope="col">Materials</th><th scope="col">To-Dos</th></tr></thead>
+<section aria-labelledby="weekly-meetings"><header class="schedule-intro"><p class="schedule-eyebrow">WINTER 2026–2027 · TENTATIVE</p><h1 id="weekly-meetings">Course Schedule</h1><p>Topics, readings, class materials, and submissions for each week.</p><p>Readings refer to sections in Skiena’s <em>The Data Science Design Manual</em>. Read before class. See the <a href="./syllabus.html#course-overview">course overview</a>.</p></header><nav class="week-navigation" aria-label="Jump to week"><a href="#week-1">Week 1</a><a href="#week-2">Week 2</a><a href="#week-3">Week 3</a><a href="#week-4">Week 4</a><a href="#week-5">Week 5</a><a href="#week-6">Week 6</a><a href="#week-7">Week 7</a><a href="#week-8">Week 8</a><a href="#week-9">Week 9</a><a href="#week-10">Week 10</a></nav><div class="schedule-controls" hidden><button type="button" data-action="expand">Expand all weeks</button><button type="button" data-action="collapse">Collapse all weeks</button></div><p class="meeting-pattern"><strong>Monday &amp; Tuesday:</strong> Lectures · reading quizzes and worksheets.<br><strong>Thursday &amp; Friday:</strong> Coding practice · submit notebooks (<code>.ipynb</code>). Exams and presentations follow the schedule below.</p><p class="schedule-help">Select a week to open its schedule. You can keep multiple weeks open. Weeks 4–10 show the tentative course outline.</p><details class="schedule-week" id="week-1" data-start="2026-11-30" data-end="2026-12-04" open><summary><span class="week-number">Week 01</span><span class="week-topic">Acquisition & Cleaning</span><span class="week-dates">Nov 30-Dec 4, 2026</span></summary><div class="week-body"><table class="schedule" aria-labelledby="week-1">
+    <thead><tr><th scope="col">Day / Date</th><th scope="col">Topic</th><th scope="col">Reading</th><th scope="col">Class materials</th><th scope="col">To-Dos (Gradescope)</th></tr></thead>
     <tbody>
-        <tr><th scope="row">Mon, Nov 30</th>
-            <td>Introduction to Data Science</td>
-            <td><strong>TBD</strong></td>
-            <td><strong>DSD 1.1-1.3: Data science &amp; data types</strong></td>
-            <td><a href="./worksheets_files/Worksheet01.pdf">Worksheet 01: Introduction to Data Mining</a></td>
-            <td></td></tr>
-        <tr><th scope="row">Tue, Dec 1</th>
-            <td>Data Acquisition + Data Cleaning</td>
-            <td><strong>TBD</strong></td>
-            <td><strong>DSD 3.2: Data collection</strong><br><strong>DSD 3.3.1-3.3.3: Errors, compatibility &amp; missing values</strong><br><strong>DSD 4.3: Z-scores &amp; normalization</strong></td>
-            <td><a href="./worksheets_files/worksheet02.pdf">Worksheet 02: Data Acquisition and Cleaning</a></td>
-            <td></td></tr>
-        <tr><th scope="row">Thu, Dec 3</th>
-            <td>Data Acquisition</td>
-            <td></td>
-            <td><strong>DSD 3.1.1-3.1.2: Notebooks &amp; data formats</strong></td>
-            <td><a href="./labs/lab01.html">Lab 01: Google Colab Foundations</a><br><a href="./labs/week01/week01-campus-bike-trips.csv" download>Campus bike-trips CSV</a></td>
-            <td>Lab 01</td></tr>
-        <tr><th scope="row">Fri, Dec 4</th>
-            <td>Data Cleaning</td>
-            <td></td>
-            <td></td>
-            <td><a href="./labs/lab02.html">Lab 02: Data Acquisition and Cleaning</a><br><a href="./labs/week01/week01-campus-bike-trips.csv" download>Campus bike-trips CSV</a></td>
-            <td>Lab 02: 20 points; submit notebook through Gradescope</td></tr>
+        <tr><th scope="row" data-label="Day / Date">Mon, Nov 30<br><span class="meeting-kind">Lecture</span></th><td data-label="Topic">Introduction to Data Science</td><td data-label="Reading">1.1–1.3: Data science &amp; data types</td><td data-label="Class materials">Slides: <strong>TBD</strong><br><a href="./worksheets_files/Worksheet01.pdf">Worksheet 01: Introduction to Data Mining</a><br><a href="https://www.gapminder.org/tools">Gapminder</a></td><td data-label="To-Dos (Gradescope)">Reading Quiz01<br><a href="./worksheets_files/Worksheet01.pdf">Worksheet01</a></td></tr>
+        <tr><th scope="row" data-label="Day / Date">Tue, Dec 1<br><span class="meeting-kind">Lecture</span></th><td data-label="Topic">Data Acquisition + Data Cleaning</td><td data-label="Reading">3.2: Data collection<br>3.3.1–3.3.3: Errors, compatibility &amp; missing values<br>4.3: Z-scores &amp; normalization</td><td data-label="Class materials">Slides: <strong>TBD</strong><br><a href="./worksheets_files/worksheet02.pdf">Worksheet 02: Data Acquisition and Cleaning</a><br><a href="https://www.neuronomixer.com/visual-guides/how-datasets-are-built">How datasets are built</a></td><td data-label="To-Dos (Gradescope)">Reading Quiz02<br><a href="./worksheets_files/worksheet02.pdf">Worksheet02</a></td></tr>
+        <tr><th scope="row" data-label="Day / Date">Thu, Dec 3<br><span class="meeting-kind">Coding practice</span></th><td data-label="Topic">Colab Foundations</td><td data-label="Reading">3.1.1–3.1.2: Notebooks &amp; data formats</td><td data-label="Class materials"><a href="./labs/lab01.html">Lab 01: Colab Foundations</a><br><a href="./labs/week01/week01-campus-bike-trips.csv" download>Campus bike-trips CSV</a></td><td data-label="To-Dos (Gradescope)">Lab 01: submit notebook (.ipynb)</td></tr>
+        <tr><th scope="row" data-label="Day / Date">Fri, Dec 4<br><span class="meeting-kind">Coding practice</span></th><td data-label="Topic">Data Cleaning</td><td data-label="Reading"></td><td data-label="Class materials"><a href="./labs/lab02.html">Lab 02: Data Acquisition and Cleaning</a><br><a href="./labs/week01/week01-campus-bike-trips.csv" download>Campus bike-trips CSV</a></td><td data-label="To-Dos (Gradescope)">Lab 02: notebook (.ipynb), 20 points</td></tr>
     </tbody>
-</table>
-</div>
-<h3 id="week-2">Week 2 · Dec 7-11, 2026</h3>
-<div style="overflow-x: auto;">
-<table class="schedule" aria-labelledby="week-2">
-    <thead><tr><th scope="col">Day / Date</th><th scope="col">Topic</th>
-        <th scope="col">Slides</th><th scope="col">Required Reading</th>
-        <th scope="col">Materials</th><th scope="col">To-Dos</th></tr></thead>
+</table></div></details>
+<details class="schedule-week" id="week-2" data-start="2026-12-07" data-end="2026-12-11"><summary><span class="week-number">Week 02</span><span class="week-topic">Data Quality & EDA</span><span class="week-dates">Dec 7-11, 2026</span></summary><div class="week-body"><table class="schedule" aria-labelledby="week-2">
+    <thead><tr><th scope="col">Day / Date</th><th scope="col">Topic</th><th scope="col">Reading</th><th scope="col">Class materials</th><th scope="col">To-Dos (Gradescope)</th></tr></thead>
     <tbody>
-        <tr><th scope="row">Mon, Dec 7</th>
-            <td>Data Quality: missingness, compatibility, and outliers</td>
-            <td><strong>TBD</strong></td>
-            <td><strong>DSD 3.3.4: Outliers</strong><br><strong>Review DSD 3.3.1-3.3.3: Data quality</strong></td>
-            <td></td>
-            <td></td></tr>
-        <tr><th scope="row">Tue, Dec 8</th>
-            <td>Exploratory Data Analysis: distributions, summary statistics, and relationships</td>
-            <td><strong>TBD</strong></td>
-            <td><strong>DSD 2.2: Descriptive statistics</strong><br><strong>DSD 6.1.1-6.1.2: EDA &amp; Anscombe’s quartet</strong></td>
-            <td></td>
-            <td></td></tr>
-        <tr><th scope="row">Thu, Dec 10</th>
-            <td>Data Quality</td>
-            <td></td>
-            <td></td>
-            <td><a href="./worksheets_files/customer_churn.csv">Customer-churn CSV</a><br>Lab handout: <strong>TBD</strong></td>
-            <td>Lab3</td></tr>
-        <tr><th scope="row">Fri, Dec 11</th>
-            <td>Exploratory Data Analysis</td>
-            <td></td>
-            <td></td>
-            <td><a href="./labs/palmer_penguins.csv">Penguins CSV</a><br>Lab handout: <strong>TBD</strong></td>
-            <td>Lab4<br><strong class="homework">HWK1 due</strong></td></tr>
+        <tr><th scope="row" data-label="Day / Date">Mon, Dec 7<br><span class="meeting-kind">Lecture</span></th><td data-label="Topic">Data Quality: missingness, compatibility, and outliers</td><td data-label="Reading">3.3.4: Outliers<br>Review 3.3.1–3.3.3: Data quality</td><td data-label="Class materials">Slides: <strong>TBD</strong></td><td data-label="To-Dos (Gradescope)">Reading Quiz03<br>Worksheet03</td></tr>
+        <tr><th scope="row" data-label="Day / Date">Tue, Dec 8<br><span class="meeting-kind">Lecture</span></th><td data-label="Topic">Exploratory Data Analysis: distributions, summary statistics, and relationships</td><td data-label="Reading">2.2: Descriptive statistics<br>6.1.1–6.1.2: EDA &amp; Anscombe’s quartet</td><td data-label="Class materials">Slides: <strong>TBD</strong></td><td data-label="To-Dos (Gradescope)">Reading Quiz04<br>Worksheet04</td></tr>
+        <tr><th scope="row" data-label="Day / Date">Thu, Dec 10<br><span class="meeting-kind">Coding practice</span></th><td data-label="Topic">Data Quality</td><td data-label="Reading"></td><td data-label="Class materials"><a href="./worksheets_files/customer_churn.csv">Customer-churn CSV</a><br>Lab handout: <strong>TBD</strong></td><td data-label="To-Dos (Gradescope)">Lab 03: submit notebook (.ipynb)</td></tr>
+        <tr><th scope="row" data-label="Day / Date">Fri, Dec 11<br><span class="meeting-kind">Coding practice</span></th><td data-label="Topic">Exploratory Data Analysis</td><td data-label="Reading"></td><td data-label="Class materials"><a href="./labs/palmer_penguins.csv">Penguins CSV</a><br>Lab handout: <strong>TBD</strong></td><td data-label="To-Dos (Gradescope)">Lab 04: submit notebook (.ipynb)<br><strong class="homework">HWK1 due</strong></td></tr>
     </tbody>
-</table>
-</div>
-<h3 id="week-3">Week 3 · Dec 14-18, 2026</h3>
-<div style="overflow-x: auto;">
-<table class="schedule" aria-labelledby="week-3">
-    <thead><tr><th scope="col">Day / Date</th><th scope="col">Topic</th>
-        <th scope="col">Slides</th><th scope="col">Required Reading</th>
-        <th scope="col">Materials</th><th scope="col">To-Dos</th></tr></thead>
+</table></div></details>
+<details class="schedule-week" id="week-3" data-start="2026-12-14" data-end="2026-12-18"><summary><span class="week-number">Week 03</span><span class="week-topic">Visualization, Review & Exam 1</span><span class="week-dates">Dec 14-18, 2026</span></summary><div class="week-body"><table class="schedule" aria-labelledby="week-3">
+    <thead><tr><th scope="col">Day / Date</th><th scope="col">Topic</th><th scope="col">Reading</th><th scope="col">Class materials</th><th scope="col">To-Dos (Gradescope)</th></tr></thead>
     <tbody>
-        <tr><th scope="row">Mon, Dec 14</th>
-            <td>Visualization Design</td>
-            <td><strong>TBD</strong></td>
-            <td><strong>DSD 6.2.1-6.2.5: Clarity, scales &amp; color</strong></td>
-            <td></td>
-            <td></td></tr>
-        <tr><th scope="row">Tue, Dec 15</th>
-            <td>Chart Selection</td>
-            <td><strong>TBD</strong></td>
-            <td><strong>DSD 6.3.3-6.3.5: Scatter, bar &amp; histogram plots</strong></td>
-            <td></td>
-            <td></td></tr>
-        <tr><th scope="row">Thu, Dec 17</th>
-            <td>Data Visualization + Review</td>
-            <td></td>
-            <td></td>
-            <td><a href="./labs/palmer_penguins.csv">Penguins CSV</a><br>Visualization practice: <strong>TBD</strong><br>Review materials: <strong>TBD</strong></td>
-            <td>Lab5</td></tr>
-        <tr><th scope="row">Fri, Dec 18</th>
-            <td class="exam">Exam 1 - tentative</td>
-            <td></td>
-            <td></td>
-            <td>Exam details: <strong>TBD</strong></td>
-            <td></td></tr>
+        <tr><th scope="row" data-label="Day / Date">Mon, Dec 14<br><span class="meeting-kind">Lecture</span></th><td data-label="Topic">Visualization Design</td><td data-label="Reading">6.2.1–6.2.5: Clarity, scales &amp; color</td><td data-label="Class materials">Slides: <strong>TBD</strong></td><td data-label="To-Dos (Gradescope)">Reading Quiz05<br>Worksheet05</td></tr>
+        <tr><th scope="row" data-label="Day / Date">Tue, Dec 15<br><span class="meeting-kind">Lecture</span></th><td data-label="Topic">Chart Selection</td><td data-label="Reading">6.3.3–6.3.5: Scatter, bar &amp; histogram plots</td><td data-label="Class materials">Slides: <strong>TBD</strong></td><td data-label="To-Dos (Gradescope)">Reading Quiz06<br>Worksheet06</td></tr>
+        <tr><th scope="row" data-label="Day / Date">Thu, Dec 17<br><span class="meeting-kind">Coding practice</span></th><td data-label="Topic">Data Visualization + Review</td><td data-label="Reading"></td><td data-label="Class materials"><a href="./labs/palmer_penguins.csv">Penguins CSV</a><br>Visualization practice: <strong>TBD</strong><br>Review materials: <strong>TBD</strong></td><td data-label="To-Dos (Gradescope)">Lab 05: submit notebook (.ipynb)</td></tr>
+        <tr><th scope="row" data-label="Day / Date">Fri, Dec 18</th><td data-label="Topic" class="exam">Exam 1 - tentative</td><td data-label="Reading"></td><td data-label="Class materials">Exam details: <strong>TBD</strong></td><td data-label="To-Dos (Gradescope)"></td></tr>
     </tbody>
-</table>
-</div>
-</section>
+</table></div></details>
+<p class="schedule-notice">Winter break: after class Dec 18–Jan 3. Classes resume Jan 4.</p>
+<details class="schedule-week" id="week-4" data-start="2027-01-04" data-end="2027-01-08"><summary><span class="week-number">Week 04</span><span class="week-topic">Distance, Similarity &amp; Clustering</span><span class="week-dates">Jan 4-8, 2027</span></summary><div class="week-body"><h3>Tentative topics</h3><p>Distance, Similarity &amp; Clustering<br>
+            Distance metrics; distance matrices; k-means clustering; centroids</p><h3>Proposed hands-on sessions</h3><p>Lab 1: Distance metric and distance matrix calculations<br>
+                Lab 2: k-means clustering, centroid updates, and Python verification</p><p class="forthcoming">Details forthcoming. Daily meetings, readings, materials, and submission dates will be added as they are released.</p></div></details>
+<details class="schedule-week" id="week-5" data-start="2027-01-11" data-end="2027-01-15"><summary><span class="week-number">Week 05</span><span class="week-topic">Hierarchical Clustering + Decision Trees for Classification and Regression</span><span class="week-dates">Jan 11-15, 2027</span></summary><div class="week-body"><h3>Tentative topics</h3><p>Hierarchical Clustering + Decision Trees for Classification and Regression<br>
+            Entropy and information gain</p><h3>Proposed hands-on sessions</h3><p>Lab 1: Hierarchical clustering and dendrogram interpretation<br>
+                Lab 2: Decision trees, entropy, and information gain</p><p class="forthcoming">Details forthcoming. Daily meetings, readings, materials, and submission dates will be added as they are released.</p></div></details>
+<details class="schedule-week" id="week-6" data-start="2027-01-19" data-end="2027-01-22"><summary><span class="week-number">Week 06</span><span class="week-topic">Metrics, Baselines + Project Team Formation / Sprint 0</span><span class="week-dates">Jan 19-22, 2027</span></summary><div class="week-body"><p class="schedule-notice">Jan 18: Martin Luther King, Jr. Day — no classes.</p><h3>Tentative topics</h3><p>Metrics, Baselines + Project Team Formation / Sprint 0<br>
+                Confusion matrix; accuracy, precision, recall, and F1</p><h3>Proposed hands-on sessions</h3><p>Lab 1: Confusion matrix and classification metrics<br>
+                Lab 2: Baseline/model comparison activity or project team formation/Sprint 0</p><p class="forthcoming">Details forthcoming. Daily meetings, readings, materials, and submission dates will be added as they are released.</p></div></details>
+<details class="schedule-week" id="week-7" data-start="2027-01-25" data-end="2027-01-29"><summary><span class="week-number">Week 07</span><span class="week-topic">Linear and Logistic Regression: prep, 1HE, matrix form</span><span class="week-dates">Jan 25-29, 2027</span></summary><div class="week-body"><h3>Tentative topics</h3><p>Linear and Logistic Regression: prep, 1HE, matrix form<br>
+            Linear regression; matrix representation; MSE and R²; logistic regression;
+            sigmoid/probabilities; one-hot encoding (1HE)</p><h3>Proposed hands-on sessions</h3><p>Lab 1: Linear regression calculations, MSE/R², and matrix representation<br>
+                Lab 2: Logistic regression, sigmoid, and classification probabilities</p><p class="forthcoming">Details forthcoming. Daily meetings, readings, materials, and submission dates will be added as they are released.</p></div></details>
+<details class="schedule-week" id="week-8" data-start="2027-02-01" data-end="2027-02-05"><summary><span class="week-number">Week 08</span><span class="week-topic">Softmax, CCE + Predictive Models</span><span class="week-dates">Feb 1-5, 2027</span></summary><div class="week-body"><h3>Tentative topics</h3><p>Softmax, CCE + Predictive Models<br>
+            Softmax; one-hot encoding as needed; categorical cross-entropy (CCE); model comparison</p><h3>Proposed hands-on sessions</h3><p>Lab 1: Softmax and cross-entropy calculations<br>
+                Lab 2: Predictive modeling / model comparison</p><p class="forthcoming">Details forthcoming. Daily meetings, readings, materials, and submission dates will be added as they are released.</p></div></details>
+<details class="schedule-week" id="week-9" data-start="2027-02-08" data-end="2027-02-12"><summary><span class="week-number">Week 09</span><span class="week-topic">Review + Exam 2 + Project Sprint</span><span class="week-dates">Feb 8-12, 2027</span></summary><div class="week-body"><h3>Tentative topics</h3><p>Review + Exam 2 + Project Sprint</p><h3>Proposed hands-on sessions</h3><p>Lab 1: Integrated predictive-modeling review<br>Lab 2: Project Sprint</p><p class="forthcoming">Details forthcoming. Daily meetings, readings, materials, and submission dates will be added as they are released.</p></div></details>
+<details class="schedule-week" id="week-10" data-start="2027-02-15" data-end="2027-02-19"><summary><span class="week-number">Week 10</span><span class="week-topic">Project Presentations</span><span class="week-dates">Feb 15-19, 2027</span></summary><div class="week-body"><h3>Tentative topics</h3><p>Project Presentations</p><h3>Proposed hands-on sessions</h3><p>Project work and presentations during lab/meeting time as appropriate</p><p class="forthcoming">Details forthcoming. Daily meetings, readings, materials, and submission dates will be added as they are released.</p></div></details></section>
 
-<details>
+<details class="schedule-archive">
     <summary>Previous schedule and resources (Winter 2024-2025)</summary>
     <p>The dated schedule below is preserved for reference. Its topic order, exams,
         deadlines, and project milestones have not yet been aligned with the tentative
@@ -405,4 +337,6 @@ th {
 </details>
 
 </div>
+<script src="./schedule-page.js"></script>
+</body>
 </html>

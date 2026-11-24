@@ -1,0 +1,69 @@
+/* Schedule-specific components; historical content retains its original table. */
+.schedule-page {background:#fff;color:#252934;font-size:16px;line-height:1.6}
+.schedule-page * {box-sizing:border-box}
+.schedule-page #content {width:100%;max-width:1200px;padding:2.5rem 1.5rem}
+.schedule-page #header {display:flex;flex-wrap:wrap;padding:0 1rem}
+.schedule-page #header a {float:none;margin:0;padding:1rem}
+.schedule-page a {color:#254ea0;text-underline-offset:.18em}
+.schedule-page #header a {color:#f0f0f0}
+.schedule-page :focus-visible {outline:3px solid #255bd4;outline-offset:4px}
+.schedule-intro h1 {font-size:clamp(2rem,4vw,2.9rem);line-height:1.15;letter-spacing:-.035em;margin:.5rem 0 1rem;color:#171921}
+.schedule-eyebrow {font-size:.875rem;font-weight:700;letter-spacing:.1em;color:#555d70}
+.week-navigation {display:flex;flex-wrap:wrap;gap:.5rem;padding:1rem 0;border-block:1px solid #d9dce6}
+.week-navigation a,.schedule-controls button {padding:.4rem .75rem;border:1px solid #dce0e9;border-radius:6px;background:white;font:inherit;font-weight:600}
+.week-navigation a[aria-current="date"] {background:#e7eefb;border-color:#254ea0}
+.schedule-controls {margin-top:1rem;display:flex;flex-wrap:wrap;gap:.6rem}
+.schedule-controls[hidden] {display:none}
+.schedule-controls button {cursor:pointer;color:#254ea0}
+.schedule-help,.forthcoming {color:#50586a}
+.schedule-week {background:white;border:1px solid #dce0e9;border-radius:14px;margin:1rem 0;box-shadow:0 5px 18px #232c4610;scroll-margin-top:1rem}
+.schedule-week > summary {display:flex;align-items:center;gap:1rem;padding:1.25rem;cursor:pointer;list-style:none}
+.schedule-week > summary::-webkit-details-marker {display:none}
+.schedule-week > summary::after {content:'+';font-size:1.5rem;color:#59667e}
+.schedule-week[open] > summary::after {content:'−'}
+.schedule-week[open] > summary {border-bottom:1px solid #e4e7ef}
+.week-number {font-size:.85rem;font-weight:700;color:#40567f;white-space:nowrap}
+.week-topic {font-weight:700;line-height:1.35}
+.week-dates {margin-left:auto;font-size:.9rem;color:#50586a;white-space:nowrap}
+.week-body {padding:1rem 1.25rem}
+.week-body h3 {margin:.5rem 0}
+.schedule-week table.schedule {width:100%;border:0;table-layout:fixed}
+.schedule-week .schedule th,.schedule-week .schedule td {position:static;text-align:left;border:0;border-bottom:1px solid #dce0e9;padding:.8rem;overflow-wrap:anywhere;background:white}
+.schedule-week .schedule thead th {background:#edf1f8;font-size:.9rem}
+.schedule-week .schedule th:first-child {width:13%}
+.schedule-week .schedule thead th:nth-child(2) {width:22%}
+.schedule-week .schedule thead th:nth-child(3) {width:24%}
+.schedule-week .schedule thead th:nth-child(4) {width:25%}
+.schedule-week .schedule td.exam {background:#fce9e9;color:#7a2525;font-weight:700}
+.schedule-notice {background:#edf3f9;border-left:3px solid #526a91;padding:1rem 1.25rem;border-radius:6px}
+.schedule-archive {margin-top:2.5rem;overflow-x:auto;border-top:1px solid #d9dce6;padding-top:1rem}
+.schedule-archive > summary {cursor:pointer;font-weight:700}
+@media(max-width:800px) {
+ .schedule-page #content {padding:1.5rem 1rem;max-width:100%}
+ .schedule-page #header a {padding:.7rem}
+ .schedule-week > summary {flex-wrap:wrap;gap:.4rem .75rem}
+ .week-topic {flex:1;min-width:60%}
+ .week-dates {margin-left:0;order:4;width:100%}
+ .week-body {padding:.75rem}
+ .schedule-week table.schedule,.schedule-week tbody {display:block}
+ .schedule-week thead {position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+ .schedule-week .schedule tr {display:block;margin-bottom:1rem;border:1px solid #dce0e9;border-radius:8px;overflow:hidden}
+ .schedule-week .schedule tbody th {display:block;width:100%;background:#edf1f8}
+ .schedule-week .schedule td {display:block}
+ .schedule-week .schedule td::before {content:attr(data-label);display:block;font-size:.85rem;margin-bottom:.25rem;font-weight:700;color:#50586a}
+ .schedule-week .schedule td:empty {display:none}
+}
+@media(max-width:400px) {.schedule-week .schedule td {grid-template-columns:1fr}}
+@media print {
+ .schedule-page {background:white;font-size:10pt}
+ .schedule-page #content {max-width:none;padding:0}
+ .schedule-page #header,.week-navigation,.schedule-controls,.schedule-help,.schedule-archive {display:none}
+ .schedule-week {box-shadow:none}
+ .schedule-week::details-content {display:block;content-visibility:visible}
+ .schedule-week > summary {break-after:avoid}
+ .schedule-week > summary::after {display:none}
+ .schedule-week tr {break-inside:avoid}
+}
+
+.meeting-pattern {background:#f5f5f5;border:1px solid #e0e0e0;border-radius:8px;padding:1rem 1.25rem}
+.meeting-kind {display:inline-block;margin-top:.35rem;font-size:.8rem;font-weight:600;color:#50586a}
