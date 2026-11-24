@@ -5,7 +5,8 @@
 <link rel="icon" href="../favicon.ico">
 <link rel="stylesheet" href="../syllabus_files/schedule.css">
 <link rel="stylesheet" href="../syllabus_files/screen.css">
-</head><body>
+<link rel="stylesheet" href="./lab.css">
+</head><body class="lab-page">
 <div id="header">
 <a id="index_link" href="../index.html">CSSE 384</a>
 <a id="syllabus_link" href="../syllabus.html">Syllabus</a>
@@ -14,74 +15,48 @@
 <a id="lab_link" href="../labs.html">Labs</a>
 <a id="resources_link" href="../resources.html">Resources</a>
 <div style="clear:both;"></div></div>
-<main id="content">
-<h1>Lab 02: Data Acquisition and Cleaning</h1>
-<p><strong>Graded: 20 points. Individual notebook submission.</strong></p>
-<h2>Learning objectives</h2><ul><li>Acquire data and distinguish identifiers, categorical features, and numerical measurements.</li><li>Detect and address data quality problems with justified cleaning choices.</li><li>Apply min-max normalization to appropriate measurements and validate results.</li></ul>
-<h2>Preparation</h2><p>Complete Lab 01. Read DSD 1.1–1.3, 3.1.1–3.1.2, 3.2, 3.3.1–3.3.3, and 4.3. Review data types, acquisition, errors, missing values, and normalization.</p>
-<h2>Checkpoints and evidence</h2>
-<p>Do the coding in your notebook. Keep these results for checkpoint questions. For checkpoints 3–5, use the short response prompts in the notebook.</p>
-<ol>
-<li><strong>Inspect (3 points):</strong> record dimensions, feature roles, and measurement summaries. Identify what synthetic data can tell you.</li>
-<li><strong>Find issues (4 points):</strong> record missing and extra-duplicate counts, category variants, and invalid measurements from the unchanged CSV.</li>
-<li><strong>Clean (5 points):</strong> preserve raw data, choose a valid cleaning order, and record your policy and final row count. Briefly explain one consequence.</li>
-<li><strong>Normalize (4 points):</strong> use min-max scaling on measurements, handle constant columns, and interpret a scaled value.</li>
-<li><strong>Validate (4 points):</strong> check the cleaned data and raw preservation. Report one observed change and one remaining limitation.</li>
-</ol>
-<p>Different justified cleaning policies may produce different final counts and means. Use your own notebook results.</p>
-<h2>Submission</h2>
-<ol>
-<li>Open <strong>Lab 02</strong> in Gradescope and answer the questions using your checkpoint results.</li>
-<li>Restart the Colab runtime, upload the CSV again if needed, and run all cells in order.</li>
-<li>Save your work, then choose <strong>File &gt; Download &gt; Download .ipynb</strong>. Check that your notebook includes your code, outputs, and short answers.</li>
-<li>Submit the downloaded <code>.ipynb</code> with your Lab 02 submission in Gradescope.</li>
-</ol>
-<p>Consult Gradescope for the deadline.</p>
-<h2>Independent Coding Practice: AI Assistance Off</h2>
-<p>In Colab, open <strong>Tools &gt; Settings &gt; AI Assistance</strong>. Where available, turn off <strong>Show AI-powered inline completions</strong> and turn on <strong>Hide generative AI features</strong>, then save. Labels vary by account; ask the instructor to verify settings if needed. Do not use AI chat, Generate, or Help me code.</p>
+<main id="content" class="lab-layout">
+<header class="lab-intro"><p class="lab-eyebrow">WEEK 01</p><h1>Lab 02: Data Acquisition and Cleaning</h1><p class="lab-lead">Inspect bike-trip data, clean a copy without imputation, compare scaling methods, and export a reusable dataset.</p><div class="lab-skills" aria-label="Skills"><span class="lab-badge">Data cleaning</span> <span class="lab-badge">Feature scaling</span> <span class="lab-badge">CSV workflows</span></div><p><strong>Individual · 20 points</strong></p></header>
+<nav class="lab-jump" aria-label="On this page"><a href="#start">Start here</a><a href="#activities">Activities</a><a href="#hints">Quick reference</a><a href="#troubleshooting">Troubleshooting</a><a href="#submission">Submission</a></nav>
+<section class="lab-panel"><h2>Learning objectives</h2><ul><li><strong>1B2a:</strong> Treat missing, duplicate, and inconsistent values using a documented policy while preserving raw data.</li><li><strong>1B2b:</strong> Validate the cleaned result and explain a before/after consequence.</li><li><strong>1B2c:</strong> Export a CSV and reload it to check values and counts.</li><li>Compare min-max scaling with z-score standardization and interpret their results.</li></ul><h2>Preparation</h2><p>Complete Lab 01. Read DSD 1.1–1.3, 3.1.1–3.1.2, 3.2, 3.3.1–3.3.3, and 4.3.</p></section>
+<details class="lab-card" id="start" open><summary><span class="lab-step">SETUP</span><span>Open your notebook and dataset</span></summary><div class="lab-card-body"><p><a href="https://colab.research.google.com/github/RHIT-CSSE/cssema384/blob/main/labs/week01/week01-data-cleaning.ipynb">Open in Colab</a> · <a href="./week01/week01-data-cleaning.ipynb" download>Download notebook</a> · <a href="./week01/week01-campus-bike-trips.csv" download>Download dataset (CSV)</a></p><ol><li>Open the notebook and choose <strong>File &gt; Save a copy in Drive</strong>. Rename it and work in that copy.</li><li>Click <strong>Connect</strong>. Download the CSV to your computer, then upload it using Colab’s Files panel.</li><li>Check the exact filename and run the provided acquisition cell.</li></ol><p>A GitHub notebook does not upload its CSV. Runtime files are temporary; upload the original CSV again after a reset.</p><p>These are fictional trips with intentional quality problems. One row represents one trip. Duration is in minutes and distance is in kilometers. The notebook’s data dictionary defines valid categories; blank fields mean unknown.</p></div></details>
+<details class="lab-card"><summary><span class="lab-step">BEFORE YOU CODE</span><span>Independent coding: AI assistance off</span></summary><div class="lab-card-body"><p>In Colab, open <strong>Tools &gt; Settings &gt; AI Assistance</strong>. Where available, turn off <strong>Show AI-powered inline completions</strong> and turn on <strong>Hide generative AI features</strong>, then save. Labels vary by account; ask the instructor to verify settings if needed. Do not use AI chat, Generate, or Help me code.</p>
 <p>Complete exercises without code or answers generated by ChatGPT, Gemini, Copilot, or similar assistants. Standard non-generative editor completion is allowed. Use readings, documentation, provided examples, and instructor help. See the <a href="https://research.google.com/colaboratory/faq.html">Colab FAQ</a>.</p>
-<h2>Open the notebook</h2><p><a href="https://colab.research.google.com/github/RHIT-CSSE/cssema384/blob/main/labs/week01/week01-data-cleaning.ipynb">Open in Colab</a> · <a href="./week01/week01-data-cleaning.ipynb" download>Download notebook</a> · <a href="./week01/week01-campus-bike-trips.csv" download>Download dataset (CSV)</a></p>
-<ol><li>Open in Colab, sign in, and select <strong>File &gt; Save a copy in Drive</strong>. Rename it and work in your own Drive copy so your changes are saved; edits are not saved back to the course notebook on GitHub.</li><li>Click <strong>Connect</strong> to start a standard Python runtime.</li><li>Download the CSV above, then upload it with the Colab Files panel (folder icon &gt; Upload). Opening a GitHub notebook does not upload its CSV.</li></ol><p>Uploaded files are temporary; upload the CSV again after a runtime reset. Keep the original dataset unchanged.</p>
-<section id="hints" aria-labelledby="hints-title">
-<h2 id="hints-title">Checkpoint hints</h2>
-<p>Consult only what you need. These examples use a separate toy table; write your own bike-trip code.</p>
-<details><summary>1. Inspect a table</summary>
-<pre><code>toy = pd.DataFrame({"item_id": [1, 2, 3], "label": [" A ", "b", None],
-                    "mass_g": [10, -2, None]})
-toy.shape
-toy.dtypes
-toy["mass_g"].describe()</code></pre>
-<p>A column's stored type does not determine its role. Decide whether arithmetic on it has meaning.</p></details>
-<details><summary>2. Find issues</summary>
-<pre><code>toy.isna().sum()
-toy.duplicated().sum()
-toy["label"].value_counts(dropna=False)
-toy.loc[toy["mass_g"] &lt;= 0]</code></pre>
-<p>The duplicate count gives extra copies, not all members of duplicate groups. Use the dataset rules to distinguish invalid values from unusual but valid values.</p></details>
-<details><summary>3. Clean without changing the original</summary>
-<pre><code>revised = toy.copy().drop_duplicates()
-revised["label"] = revised["label"].str.strip().str.lower()
-revised["label"] = revised["label"].fillna("unknown")
-revised["mass_g"] = revised["mass_g"].mask(revised["mass_g"] &lt;= 0)
-# Choose ONE policy: drop missing measurements or fill them.
-# Tools: dropna(subset=[...]) or fillna(a_justified_value)</code></pre>
-<p>Compute any replacement statistic after removing duplicate records and invalid measurements. A median is one possible replacement; explain your choice.</p></details>
-<details><summary>4. Scale a measurement</summary>
-<pre><code>values = pd.Series([5.0, 10.0, 15.0])
-low, high = values.min(), values.max()
-scaled = 0.0 if high == low else (values - low) / (high - low)</code></pre>
-<p>Apply the formula separately to each suitable measurement. A value halfway through the observed range need not be the median.</p></details>
-<details><summary>5. Check your results</summary>
-<pre><code>import math
-assert revised["item_id"].is_unique
-assert not revised.duplicated().any()
-revised.isna().sum()
-revised["label"].isin(["a", "b", "unknown"])
-# For a numerical Series s:
-# s.map(math.isfinite).all()
-# (s &gt; 0).all()
-# s.between(-1e-10, 1 + 1e-10).all()  # scaled values only</code></pre>
-<p>Use <code>.all()</code> to combine row-by-row checks. Check category membership after standardizing strings. Compare <code>min()</code> and <code>max()</code> with the expected scaled endpoints, allowing rounding tolerance. Use <code>pd.testing.assert_frame_equal(raw, pd.read_csv("week01-campus-bike-trips.csv"))</code> to check raw preservation.</p></details>
-<p><a href="https://pandas.pydata.org/docs/getting_started/intro_tutorials/index.html">pandas tutorials</a></p>
-</section>
+</div></details>
+<section id="activities" aria-labelledby="activities-title"><h2 id="activities-title">Coding checkpoints</h2><p>Complete the coding in the notebook. Keep your results and outputs; write Responses A, B, and C in the notebook. Detailed instructions remain beside each activity cell.</p>
+<details class="lab-card" id="checkpoint-1" open><summary><span class="lab-step">CHECKPOINT 1</span><span>Inspect the source table</span><span class="lab-kind">3 points</span></summary><div class="lab-card-body"><p>Inspect <code>raw</code> without modifying it. Create <code>feature_roles</code>, mapping all five columns to <code>identifier</code>, <code>categorical</code>, or <code>measurement</code>. Display the dimensions and your dictionary.</p><details class="lab-hint"><summary>Need a hint?</summary><div>A stored numeric type does not make an identifier a measurement. Think about whether arithmetic has meaning.</div></details><p class="lab-check"><strong>Check yourself:</strong> You have displayed the table dimensions and assigned a role to every column.</p></div></details>
+<details class="lab-card" id="checkpoint-2" open><summary><span class="lab-step">CHECKPOINT 2</span><span>Diagnose quality issues</span><span class="lab-kind">4 points</span></summary><div class="lab-card-body"><p>Using unchanged <code>raw</code>, create <code>missing_counts</code>, <code>duplicate_count</code>, <code>invalid_counts</code>, and <code>category_values</code>. Count nonpositive measurements separately from missing values; preserve the original category labels. Display repeated trip IDs and compare their complete records.</p><details class="lab-hint"><summary>Need a hint?</summary><div><code>duplicated().sum()</code> counts extra copies. <code>dropna().unique()</code> helps inspect known labels without standardizing them first.</div></details><p class="lab-check"><strong>Check yourself:</strong> You have all four named results and have compared the records with repeated IDs.</p></div></details>
+<details class="lab-card" id="checkpoint-3" open><summary><span class="lab-step">CHECKPOINT 3</span><span>Clean a copy</span><span class="lab-kind">5 points</span></summary><div class="lab-card-body"><p>Create <code>clean</code> from a copy of <code>raw</code>. Strip outer spaces and lowercase category labels; remove the confirmed extra duplicate; mark nonpositive measurements missing; drop rows missing either duration or distance. <strong>Do not impute.</strong> Keep missing rider labels missing and retain trips whose only missing value is rider type. Preserve the five original columns and units.</p><p><strong>Response A (2 sentences):</strong> Report before/after row counts and removal rules, then explain how dropping incomplete trips could affect a conclusion.</p><details class="lab-hint"><summary>Need a hint?</summary><div>Use <code>copy()</code>, string methods, <code>mask()</code>, and <code>dropna(subset=[...])</code>. The subset must reflect which fields are required. See <a href="#missing-values">Removing rows with missing measurements</a> for a worked example.</div></details><p class="lab-check"><strong>Check yourself:</strong> The cleaning policy matches the notebook, and raw data remains unchanged.</p></div></details>
+<details class="lab-card" id="checkpoint-4" open><summary><span class="lab-step">CHECKPOINT 4</span><span>Compare scaling methods</span><span class="lab-kind">4 points</span></summary><div class="lab-card-body"><p>Create <code>scaled = clean.copy()</code>. Add <code>duration_min_scaled</code> and <code>distance_km_scaled</code> using min-max scaling, and <code>duration_min_z</code> using z-scores. Use <strong>population standard deviation</strong>: <code>std(ddof=0)</code>. Compute transformations from the original cleaned measurements and retain all original columns.</p><p><strong>Response B (2 sentences):</strong> Interpret a min-max value of 0.5 and a z-score of 0; explain why these reference points differ.</p><details class="lab-hint"><summary>Need a hint?</summary><div>Do not transform identifiers or category labels. Display both min-max ranges and the z-score mean and population standard deviation. The supplied cleaned measurements are nonconstant.</div></details><p class="lab-check"><strong>Check yourself:</strong> All three new columns exist, with the requested summaries displayed.</p></div></details>
+<details class="lab-card" id="checkpoint-5" open><summary><span class="lab-step">CHECKPOINT 5</span><span>Validate, export, and reload</span><span class="lab-kind">4 points</span></summary><div class="lab-card-body"><p>Create <code>validation_checks</code> with Boolean entries <code>unique_ids</code>, <code>positive_measurements</code>, and <code>allowed_categories</code>. Ignore missing rider labels for category checks. Export <code>scaled</code> as <code>week01-campus-bike-trips-clean.csv</code> without an index, then read it into <code>reloaded</code>. Compare dimensions, column names, and measurement values.</p><p><strong>Response C (2 sentences):</strong> Report an observed validation or reload comparison, explain what it establishes, and name one limitation it cannot rule out.</p><details class="lab-hint"><summary>Need a hint?</summary><div>Use <code>to_csv(..., index=False)</code> and <code>pd.read_csv(...)</code>. Combine row-wise checks with <code>.all()</code>; inspect missingness separately from positivity.</div></details><p class="lab-check"><strong>Check yourself:</strong> Your Boolean checks are displayed, the CSV exists, and the reload comparison is recorded. Keep the CSV for your own use.</p></div></details>
+</section><section id="hints" class="lab-panel" aria-labelledby="reference-title"><p class="lab-eyebrow">KEEP FOR LATER</p><h2 id="reference-title">Quick reference</h2><p>Reference tools, not completed checkpoint solutions. Use the hints inside each checkpoint when needed.</p><div class="lab-table"><table><thead><tr><th scope="col">Goal</th><th scope="col">Tools or interpretation</th></tr></thead><tbody>
+<tr><td>Inspect and diagnose</td><td><code>shape</code>, <code>dtypes</code>, <code>head()</code>, <code>isna().sum()</code>, <code>duplicated()</code></td></tr>
+<tr><td>Standardize labels</td><td><code>str.strip()</code>, <code>str.lower()</code>; preserve unknown labels as missing</td></tr>
+<tr><td>Select required complete records</td><td><code>dropna(subset=[...])</code> checks only the specified columns</td></tr>
+<tr><td>Min-max scaling</td><td><code>(x - x.min()) / (x.max() - x.min())</code>; 0.5 is the midpoint of the observed range</td></tr>
+<tr><td>Z-scores</td><td><code>(x - x.mean()) / x.std(ddof=0)</code>; 0 is the mean, and values can be negative</td></tr>
+<tr><td>Export and reload</td><td><code>to_csv(..., index=False)</code>, <code>pd.read_csv(...)</code>; compare values as well as shape</td></tr>
+</tbody></table></div><h3 id="missing-values">Removing rows with missing measurements</h3>
+<p>Sometimes an analysis needs a value in each of several columns. <code>dropna()</code> can remove rows that lack those required values. The <code>subset</code> argument tells pandas which columns to check.</p>
+<p>This example uses a separate table of package measurements:</p>
+<pre><code>packages = pd.DataFrame({
+    "package": ["A", "B", "C", "D"],
+    "mass_g": [100, None, 300, 400],
+    "length_cm": [10, 20, None, 40],
+    "label": ["small", "medium", "large", None]
+})
+
+complete = packages.dropna(subset=["mass_g", "length_cm"])
+complete</code></pre>
+<p><strong>Result:</strong> packages A and D remain. B is missing mass; C is missing length. D stays because its missing label is not one of the required measurements.</p>
+<ul><li>By default, <code>how="any"</code> removes a row if <strong>either</strong> selected column is missing. Both measurements must be present to keep the row.</li><li><code>how="all"</code> would remove a row only when <strong>both</strong> selected columns are missing; that is a different rule.</li><li>Without <code>subset</code>, pandas checks every column, which could remove rows just because an optional label is missing.</li><li>Assign the returned table to a variable. This example leaves <code>packages</code> unchanged.</li></ul>
+<p><code>dropna()</code> detects missing values, not invalid measurements such as negative lengths. Mark invalid values as missing first, then remove rows according to the required-column rule. Removing incomplete rows also changes which observations are represented; consider how that could affect your conclusions.</p>
+<p>For future datasets, a constant column has zero range and standard deviation, so these formulas need an explicit zero-denominator policy. This lab’s cleaned measurements are nonconstant.</p><p><a href="https://pandas.pydata.org/docs/getting_started/intro_tutorials/index.html">pandas tutorials</a></p></section>
+<section id="troubleshooting" class="lab-panel"><h2>Troubleshooting</h2>
+<details class="lab-hint"><summary>CSV not found after restarting</summary><div>Upload the original CSV through the Files panel, check its exact filename, and rerun from the acquisition cell.</div></details>
+<details class="lab-hint"><summary>A missing rider label causes validation to fail</summary><div>The policy permits missing rider labels. Check known labels against the allowed categories and check required measurements separately.</div></details>
+<details class="lab-hint"><summary>Z-score standard deviation looks wrong</summary><div>Use <code>ddof=0</code> for both the transformation and its summary. pandas otherwise defaults to the sample standard deviation.</div></details>
+<details class="lab-hint"><summary>The reloaded CSV has an extra column</summary><div>Check whether you exported the DataFrame index. Export again with <code>index=False</code>, then reload the new file.</div></details></section>
+<section id="submission" class="lab-panel"><h2>Submit through Gradescope</h2><ol><li>Restart the session, upload the original CSV again, and choose <strong>Runtime &gt; Run all</strong>. Fix errors and finish Responses A, B, and C.</li><li>Save your Drive copy, then choose <strong>File &gt; Download &gt; Download .ipynb</strong>.</li><li>Open <strong>Gradescope &gt; Lab02</strong> and upload the downloaded notebook. <strong>Submit only the .ipynb</strong>, including code, outputs, and short responses. Keep the exported CSV for your own use.</li></ol></section>
+<p class="lab-footer"><a href="#content">Back to top</a> · <a href="../labs.html">All labs</a></p>
 </main></body></html>
