@@ -1,13 +1,16 @@
 <!DOCTYPE html>
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CSSE/MA 384 Syllabus</title>
 
 
 <link rel="stylesheet" type="text/css" href="./syllabus_files/screen.css">
 <link rel="stylesheet" type="text/css" href="./syllabus_files/schedule.css">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="stylesheet" href="./schedule-page.css">
+<link rel="stylesheet" href="./syllabus-page.css">
 </head>
-<body>
+<body class="schedule-page syllabus-page">
 <div id="header">
     <a id="index_link" href="./index.html">CSSE/MA 384</a>
     <a id="syllabus_link" href="./syllabus.html">Syllabus</a>
@@ -21,7 +24,7 @@
 
 <div id="content">
 
-<header>
+<header class="schedule-intro">
     <h1>CSSE/MA 384 Data Mining</h1>
     <h2>Winter 2026-2027</h2>
 </header>
@@ -35,41 +38,45 @@
     </tbody>
 </table>
 
-<section>
+<div class="schedule-controls" hidden><button type="button" data-action="expand">Expand all sections</button><button type="button" data-action="collapse">Collapse all sections</button></div><p class="schedule-help">Select a section to read more. You can keep multiple sections open.</p>
+<details class="syllabus-card" id="instructors" open><summary>Instructors</summary><div class="syllabus-card-body">
     <p><a name="instructors"></a></p>
-    <h2>Instructors</h2>
+
     <h3><a href="https://www.rose-hulman.edu/academics/faculty/boutell-matthew-boutell.html">Dr. Matt Boutell</a></h3>
     <p><strong>Office:</strong> Moench F226</p>
     <p><strong>Email:</strong> boutell@rose-hulman.edu</p>
     <h3><a href="https://www.linkedin.com/in/olgascrivner/">Dr. Olga Scrivner</a></h3>
     <p><strong>Office:</strong> Moench F204</p>
     <p><strong>Email:</strong> scrivner@rose-hulman.edu</p>
-</section>
+</div></details>
 
-<section>
-    <h2>Course Description</h2>
+<details class="syllabus-card" id="course-description"><summary>Course Description</summary><div class="syllabus-card-body">
+
     <p>An introduction to data mining for large data sets, including data preparation, exploration, aggregation/reduction, and visualization. Elementary methods for classification, association, and cluster analysis are covered. Significant attention will be given to presenting and reporting data mining results. Students may not get credit for both this course and the MA 384 Data Mining courses.</p>
-</section>
+</div></details>
 
-<section aria-labelledby="course-overview">
-<h2 id="course-overview">Course Overview · Winter 2026-2027</h2>
+<details class="syllabus-card" id="course-overview"><summary>Course Overview Winter 2026-2027</summary><div class="syllabus-card-body">
+
+<p>Note: Syllabus is subject to changes.</p>
 <table class="schedule" aria-label="Tentative weekly course topics and proposed labs">
     <thead><tr><th scope="col">Week</th><th scope="col">Dates (2026-2027)</th><th scope="col">Topics</th><th scope="col">Proposed hands-on/lab sessions</th></tr></thead>
     <tbody>
         <tr><td>Week 1</td><td>Nov 30-Dec 4, 2026</td><td>Introduction to Data Science + Data Acquisition + Data Cleaning</td>
-            <td>Lab 1: Data Acquisition<br>Lab 2: Guided Data Cleaning</td></tr>
+            <td>Lab 1: Colab Fundamentals<br>Lab 2: Data Cleaning</td></tr>
         <tr><td>Week 2</td><td>Dec 7-11, 2026</td><td>Data Quality + Exploratory Data Analysis</td>
-            <td>Lab 1: Data Quality - missing/inconsistent data and quality issues<br>
+            <td>Lab 1: Data Quality<br>
                 Lab 2: Exploratory Data Analysis - distributions, summary statistics, and relationships</td></tr>
         <tr><td>Week 3</td><td>Dec 14-18, 2026</td><td>Data Visualization + Review + Exam 1</td>
             <td>Lab 1: Data Visualization and critique of visualizations<br>
-                Lab 2: Integrated review - acquisition → cleaning → data quality → EDA → visualization</td></tr>
+                <!-- Lab 2: Integrated review - acquisition → cleaning → data quality → EDA → visualization -->
+            </td></tr>
         <tr><td colspan="4" class="break">Holiday Vacation: after the last class on
             December 18, 2026, through January 3, 2027. Classes resume January 4.</td></tr>
         <tr><td>Week 4</td><td>Jan 4-8, 2027</td><td>Distance, Similarity &amp; Clustering<br>
             Distance metrics; distance matrices; k-means clustering; centroids</td>
             <td>Lab 1: Distance metric and distance matrix calculations<br>
-                Lab 2: k-means clustering, centroid updates, and Python verification</td></tr>
+                Lab 2: k-means clustering</td>
+            </tr>
         <tr><td>Week 5</td><td>Jan 11-15, 2027</td><td>Hierarchical Clustering + Decision Trees for Classification and Regression<br>
             Entropy and information gain</td>
             <td>Lab 1: Hierarchical clustering and dendrogram interpretation<br>
@@ -89,38 +96,39 @@
             <td>Lab 1: Softmax and cross-entropy calculations<br>
                 Lab 2: Predictive modeling / model comparison</td></tr>
         <tr><td>Week 9</td><td>Feb 8-12, 2027</td><td>Review + Exam 2 + Project Sprint</td>
-            <td>Lab 1: Integrated predictive-modeling review<br>Lab 2: Project Sprint</td></tr>
+            <td>Lab 1: Integrated predictive-modeling review</td></tr>
         <tr><td>Week 10</td><td>Feb 15-19, 2027</td><td>Project Presentations</td>
-            <td>Project work and presentations during lab/meeting time as appropriate</td></tr>
-        <tr><td>Finals</td><td>Feb 22-25, 2027</td><td colspan="2">Final examination period: Monday,
-            February 22, 8:00 a.m., through Thursday, February 25, 5:00 p.m.</td></tr>
-        <tr><td>Term ends</td><td>Mar 1, 2027</td><td colspan="2">Final grades due at 9:00 a.m.;
-            Winter Term ends at 5:00 p.m.</td></tr>
+            <td>Project work and presentations</td></tr>
+        <!-- <tr><td>Finals</td><td>Feb 22-25, 2027</td><td colspan="2">Final examination period: Monday,
+            February 22, 8:00 a.m., through Thursday, February 25, 5:00 p.m.</td></tr> -->
+        <!-- <tr><td>Term ends</td><td>Mar 1, 2027</td><td colspan="2">Final grades due at 9:00 a.m.;
+            Winter Term ends at 5:00 p.m.</td>
+        </tr> -->
     </tbody>
 </table>
 
-</section>
+</div></details>
 
-<section>
-    <h2>Prerequisites</h2>
+<details class="syllabus-card" id="prerequisites"><summary>Prerequisites</summary><div class="syllabus-card-body">
+
      <ul>
         <li>Credit Hours: 4R-0L-4C</li>
         <li>Prerequisites: CSSE 120 and MA 221 and (MA 223 or MA 381). Future offerings will instead require (MA 221 or MA 223) and (CHE 310 or CSSE 220 or MA 332 or MA 386 or ME 227).</li>
         <li>Corequisites: None</li>
         <li>Skill with Python is helpful. If you don't know some, be ready to dive in!</li>
     </ul>
-</section>
+</div></details>
 
-<section>
+<details class="syllabus-card" id="required-materials"><summary>Required Materials</summary><div class="syllabus-card-body">
     <p><a name="textbooks"></a></p>
-    <h2>Required Materials</h2>
+
     <h3>Required reading</h3>
     <p><strong>Textbook:</strong> Steven S. Skiena, <em>The Data Science Design Manual</em> (DSD) (<a href="https://go.openathens.net/redirector/rose-hulman.edu?url=https://doi.org/10.1007/978-3-319-55444-0">Springer link)</a></p>
     <p><strong>Practical Python reference:</strong> Wes McKinney, <em>Python for Data Analysis</em>, 3rd edition (<a href="https://wesmckinney.com/book/">free online edition</a>). Selected sections support the coding labs. Each lab identifies required preparation separately from recommended review; Lab 01’s Python Fundamentals Review is self-paced and not graded.</p>
-</section>
+</div></details>
 
-<section>
-    <h2>Course Learning Outcomes</h2>
+<details class="syllabus-card" id="course-learning-outcomes"><summary>Course Learning Outcomes</summary><div class="syllabus-card-body">
+
     <p>Students who complete this course should be able to extract value from large data sets. In particular, students will be able to:</p>
     <ol>
         <li>Extract, clean, transform, and save data in different formats.</li>
@@ -131,22 +139,25 @@
         <li>Acquire new knowledge as needed, using appropriate learning strategies.</li>
         <li>Communicate data mining results to a wider audience.</li>
     </ol>
-</section>
+</div></details>
 
-<section>
-    <h2>Schedule and Overview of Graded Work</h2>
-    
+<details class="syllabus-card" id="schedule-and-overview-of-graded-work"><summary>Schedule and Overview of Graded Work</summary><div class="syllabus-card-body">
+
+
     <h3>Schedule</h3>
     <p>The <a href="./schedule.html">course schedule page</a> has the topics and due dates for the course materials. Please bookmark that page.</p>
 
     <h3>Worksheets</h3>
     <p>Each lecture will be supplemented with paper worksheets that students will complete in class and submit to gradescope.</p>
 
+    <h3>Reading Quizzes</h3>
+    <p>Each lecture reading will have online assessment quiz that students will complete on gradescope the day the reading is due.</p>
+
    <h3>Exams</h3>
-   <p>There will be two in-class, 50-minute midterm exams. No resources are allowed on the exams.</p>
+   <p>There will be two in-class, 50-minute exams. No resources are allowed on the exams.</p>
 
    <h3>Final Project</h3>
-   <p>You will propose project topics and complete a project with a team of students (usually 4 per team). 
+   <p>You will propose project topics and complete a project with a team of students (usually 4 per team).
     See the <a href="./final-project.html">project page</a>.</p>
 
     <h3>Attendance</h3>
@@ -155,58 +166,58 @@
     <p><a name="homework"></a></p>
 
     <h3>Homework</h3>
-    <p>Solutions will generally be discussed next week after homework is due. You can only request up to 2 days late submission. 
+    <p>Solutions will generally be discussed next week after homework is due. You can only request up to 2 days late submission.
     Once the solution is discussed you are no longer will be allowed for late submission.
     Solutions to the homework should be presented using good style. Your name should appear at the top of each page. Be
     sure to state any assumptions that you make to solve the problem. Above all it
     must be legible--if we can't read it, you won't get credit.</p>
-    <p>Citing all external resources is crucial. 
-        While you are not allowed to solve problems with genAI, 
-        you can use it for debugging but you MUST cite the resources you used: 
+    <p>Citing all external resources is crucial.
+        While you are not allowed to solve problems with genAI,
+        you can use it for debugging but you MUST cite the resources you used:
         document what prompt was used and was solution was provided.</p>
 
     <p><a name="labs"></a></p>
     <h3>Lab Assignments</h3>
-<p>Lab assignments will be listed on the on the schedule. 
+<p>Lab assignments will be listed on the on the schedule.
     The labs will be done using Google Colab, an online python notebook environment.
-    Completed labs are submitted via GradeScope (read instructions 
+    Completed labs are submitted via GradeScope (read instructions
     for each individual lab).</p>
-<p>Live labs will be done in class and must be checked for completion. 
+<p>Live labs will be done in class and must be checked for completion.
     No submission on Gradescope </p>
-</section>
+</div></details>
 
-<section>
-    <h2>Grading Policy</h2>
+<details class="syllabus-card" id="grading-policy"><summary>Grading Policy</summary><div class="syllabus-card-body">
+
     <ul>
-        <li>Exams (2): 40%</li>
-        <li>Worksheets: 5%</li>
-        <li>Coding Lab Assignments: 15%</li>
+        <li>Exams (2): 30%</li>
+        <li>Reading Quizzes: 10%</li>
+        <li>Lab Assignments: 15%</li>
         <li>Homework: 15%</li>
-        <li>Term Project: 20%</li>
-        <li>Attendance/Participation: 5%</li>
+        <li>Term Project: 30%</li>
+        <li>Attendance/Participation (worksheets): 10%</li>
     </ul>
     <p><strong>Total:</strong> 100%</p>
 
-    <p>Generally, 90-100% is an A, 85-89% is a B+, etc. 
+    <p>Generally, 90-100% is an A, 85-89% is a B+, etc.
         The default is not to round grades. Give it your full effort and we'll be fair.
     </p>
 
 <p>The above is a guideline that we typically  follow. Please understand that it is not a promise.
 We will do our best to conform to the institute-wide grading policy described in the
 <a href="http://www.rose-hulman.edu/campus-life/student-services/registrar/rules-and-procedures/grades.html">Grade Descriptions</a>
-section of the registrar's web page.  
-As you read it, note in particular that phrase "thorough competence to do excellent work" appears in the description of the "B" grade (the standard for "A" is even higher), and 
-it further states that "B" and "B+" will not be given for mere compliance with the minimum essential standards of the course.</p>    
-</section>
+section of the registrar's web page.
+As you read it, note in particular that phrase "thorough competence to do excellent work" appears in the description of the "B" grade (the standard for "A" is even higher), and
+it further states that "B" and "B+" will not be given for mere compliance with the minimum essential standards of the course.</p>
+</div></details>
 
-<section>
-    <h2>Institute Policies</h2>
+<details class="syllabus-card" id="institute-policies"><summary>Institute Policies</summary><div class="syllabus-card-body">
+
     <p><strong>Students with Accessibility Needs:</strong> Rose-Hulman is committed to working with students who have special needs or disabilities. Visit the Accessibility Services website for more information.</p>
-</section>
+</div></details>
 
 
 
-<h4>Collaboration</h4>
+<details class="syllabus-card" id="collaboration"><summary>Collaboration</summary><div class="syllabus-card-body">
 
 <p>Collaboration is encouraged on homework and labs. It is prohibited on exams.</p>
 
@@ -224,14 +235,14 @@ it further states that "B" and "B+" will not be given for mere compliance with t
 
 <p>You should never look at another student's code to get ideas of how to write your own code. Beginning the process of producing your own solution with an electronic copy of work done by other students is never appropriate.</p>
 
-<h4>Use of Internet and LLMs for Class Work</h4>
+</div></details><details class="syllabus-card" id="use-of-internet-and-llms-for-class-work"><summary>Use of Internet and LLMs for Class Work</summary><div class="syllabus-card-body">
 
 <p>Searching the Internet or other resources for answers to homework problems, labs, or exams is considered academic dishonesty.
 Likewise, use of Large Language Models (LLMs) such as ChatGPT to obtain answers to homework problems, labs, or exams is considered academic dishonesty.</p>
 
 <p>This policy are in place because it is not helpful to your learning to use these tools in this way, and academic integrity requires that all of the work you submit is your own.</p>
 
-<h4>Academic Integrity and CSSE Integrity Committee Procedures </h4>
+</div></details><details class="syllabus-card" id="academic-integrity-and-csse-integrity-committee-procedures"><summary>Academic Integrity and CSSE Integrity Committee Procedures </summary><div class="syllabus-card-body">
 
 <p>It is critical to maintain academic integrity. It is essential for all students to cite any and all sources of help received in completing coursework. This practice not only fosters a culture of honesty and transparency but also prevents misunderstandings that might otherwise escalate to formal proceedings. Students should also be aware of what is appropriate help on homework assignments - see <a href="https://rosehulman.sharepoint.com/:w:/r/sites/CS/_layouts/15/Doc.aspx?sourcedoc=%7B72D3DC4B-233D-4DF6-8E10-736359A06C80%7D&amp;file=IntegrityPilotPolicy%20-%20What%20Constitutes%20Misconduct.docx">What Constitutes Misconduct</a>. To ensure fairness and responsibility, any instances of suspected misconduct will be handled through the CSSE Integrity Committee.  </p>
 
@@ -240,7 +251,7 @@ Likewise, use of Large Language Models (LLMs) such as ChatGPT to obtain answers 
 
 <p>This policy can also lead to activating the Institute Academic Integrity Policy, described <a href="http://www.rose-hulman.edu/offices-and-services/student-affairs/student-handbook-2015-2016/institute-policies,-rules-regulations.aspx">here</a>.</p>
 
-<p>It is expected that any work submitted for assessment represents the intellectual work of the individual(s) submitting the work. Any attempt to pass off the intellectual work of another (including the work generated by Large Language Models like ChatGPT) as their own or without proper attribution is an example of academic misconduct and is subject to the penalties described in the Rose-Hulman Academic Rules and Procedures and Student Handbook documents.</p>
+<p>It is expected that any work submitted for assessment represents the intellectual work of the individual(s) submitting the work. Any attempt to pass off the intellectual work of another (including the work generated by Large Language Models like ChatGPT) as their own or without proper attribution is an example of academic misconduct and is subject to the penalties described in the Rose-Hulman Academic Rules and Procedures and Student Handbook documents.</p></div></details>
 </div>
 
 <footer>
@@ -248,4 +259,6 @@ Likewise, use of Large Language Models (LLMs) such as ChatGPT to obtain answers 
 </footer>
 
 
+<script src="./syllabus-page.js"></script>
+</body>
 </html>

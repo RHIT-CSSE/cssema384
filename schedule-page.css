@@ -11,10 +11,11 @@
 .schedule-eyebrow {font-size:.875rem;font-weight:700;letter-spacing:.1em;color:#555d70}
 .week-navigation {display:flex;flex-wrap:wrap;gap:.5rem;padding:1rem 0;border-block:1px solid #d9dce6}
 .week-navigation a,.schedule-controls button {padding:.4rem .75rem;border:1px solid #dce0e9;border-radius:6px;background:white;font:inherit;font-weight:600}
-.week-navigation a[aria-current="date"] {background:#e7eefb;border-color:#254ea0}
+.schedule-page .week-navigation a {color:#333}
+.week-navigation a[aria-current="date"] {background:#eee;border-color:#777}
 .schedule-controls {margin-top:1rem;display:flex;flex-wrap:wrap;gap:.6rem}
 .schedule-controls[hidden] {display:none}
-.schedule-controls button {cursor:pointer;color:#254ea0}
+.schedule-controls button {cursor:pointer;color:#333}
 .schedule-help,.forthcoming {color:#50586a}
 .schedule-week {background:white;border:1px solid #dce0e9;border-radius:14px;margin:1rem 0;box-shadow:0 5px 18px #232c4610;scroll-margin-top:1rem}
 .schedule-week > summary {display:flex;align-items:center;gap:1rem;padding:1.25rem;cursor:pointer;list-style:none}
@@ -22,7 +23,7 @@
 .schedule-week > summary::after {content:'+';font-size:1.5rem;color:#59667e}
 .schedule-week[open] > summary::after {content:'−'}
 .schedule-week[open] > summary {border-bottom:1px solid #e4e7ef}
-.week-number {font-size:.85rem;font-weight:700;color:#40567f;white-space:nowrap}
+.week-number {font-size:.85rem;font-weight:700;color:#505050;white-space:nowrap}
 .week-topic {font-weight:700;line-height:1.35}
 .week-dates {margin-left:auto;font-size:.9rem;color:#50586a;white-space:nowrap}
 .week-body {padding:1rem 1.25rem}
